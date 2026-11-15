@@ -1,4 +1,8 @@
-# SwiftFlash
+# SwiftFlash GUI (archived)
+
+> **This repository is archived.** Development continues in [zehrer/SwiftFlash](https://github.com/zehrer/SwiftFlash),
+> the `swiftflash` command-line tool (`brew install zehrer/tap/swiftflash`). Its `SwiftFlashCore` library is
+> meant as the base for a future GUI.
 
 **SwiftFlash** is a lightweight, native macOS application for flashing `.iso` file to a external drive . Built with SwiftUI and Swift 6, SwiftFlash aims to be a minimal, safe, and open-source alternative to tools like balenaEtcher or Raspberry Pi Imager.
 
@@ -64,7 +68,7 @@ SwiftFlash includes built-in SHA256 checksum functionality to ensure file integr
 
 ## Command-Line Tool
 
-[SwiftFlashCLI](https://github.com/zehrer/SwiftFlashCLI) is the command-line sibling of this app. It flashes
+[SwiftFlash](https://github.com/zehrer/SwiftFlash) is the command-line sibling of this app. It flashes
 `.img` / `.iso` images (also `.xz` compressed, or loaded from an `http(s)` URL or a registered build server)
 to SD cards and USB sticks, using only system frameworks. Install it with Homebrew (Apple Silicon, macOS 13
 or later):
@@ -74,7 +78,7 @@ brew install zehrer/tap/swiftflash
 swiftflash --version
 ```
 
-See the [SwiftFlashCLI README](https://github.com/zehrer/SwiftFlashCLI#readme) for usage.
+See the [SwiftFlash README](https://github.com/zehrer/SwiftFlash#readme) for usage.
 
 ### Shared Formats
 
@@ -83,12 +87,12 @@ settings. The app does not use them yet:
 
 - **`/.uuid` metadata file** - a small JSON file in the root of a partition on the medium that identifies the
   medium and the flashed image; an image can bring its own `image` block. See
-  [docs/uuid-file.md](https://github.com/zehrer/SwiftFlashCLI/blob/main/docs/uuid-file.md).
+  [docs/uuid-file.md](https://github.com/zehrer/SwiftFlash/blob/main/docs/uuid-file.md).
 - **Configuration** - media inventory, remembered images, flash history and image sources are stored in
   `~/.swiftflash/config.json`, whose layout is intended to stay compatible with this app.
 - **Image publishing** - how a build server should publish images (checksum files, an optional `index.json`,
   `/.uuid` inside the image) so they are easy and safe to flash. See
-  [docs/build-server.md](https://github.com/zehrer/SwiftFlashCLI/blob/main/docs/build-server.md).
+  [docs/build-server.md](https://github.com/zehrer/SwiftFlash/blob/main/docs/build-server.md).
 
 ## Development
 
